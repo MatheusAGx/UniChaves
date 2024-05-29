@@ -12,7 +12,17 @@
       margin: 0;
       padding: 0;
    }
+   body {
+      width:100%;
+      height: 100%;
+   }
+
+  .validacao {
+    display: none;
+    font-size: 12px;
+  }
 </style>
+
 <body>
 
     <header>
@@ -27,24 +37,25 @@
             <div class="container-fluid">
               <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
                 <span class="navbar-toggler-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></span>
-            </button>
+              </button>
               <div>
                 <h2>UniChaves</h2>
-            </div>
-            <div style="display: flex; gap: 15px; justify-content: center; align-items: center;">
-                <div>
-                    <div>
-                        <p> Nome de Usuario </p>
-                        <p> Tipo de Usuario </p>
-                    </div>
-                </div>
-                <div>
-                    <i class="bi bi-person-circle"></i>
-                </div>
-            </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <div>
+                          <p>Nome do Usuário</p>
+                      </div>
+                  </div>
+                  <!-- <div class="col-6">
+                      <i class="bi bi-person-circle"></i>
+                  </div> -->
+              </div>
 
             </div>
             
           </nav>
 
     </header>
+    
+    <main>

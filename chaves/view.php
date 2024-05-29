@@ -15,9 +15,10 @@
     <?php while($chave = $busca_chave->fetch_object()) { ?>
       <div class="card card-hover">
         <div class="card-body">
-            <div class="col-12 col-sm-12">
-              <h6><?= $chave->descricao ?></h6>
-              <div>Dados:</div>
+            <div class="col-12 col-sm-12"> 
+            <h6><?= $chave->nome ?></h6>
+              <div><small>Status: <?= $chave->id_status ?> | Instituição: <?= $chave->instituicao ?> | Usuário: <?= $chave->id_usuario ?> </small> </div>
+              <div><small>Descrição: <?= $chave->descricao ?> </small> </div>
             </div>
         </div>
       </div>

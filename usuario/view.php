@@ -13,15 +13,16 @@
       </div>
 
     
-      
+      <?php while($usuario = $busca_usuario->fetch_object()) { ?>
       <div class="card card-hover">
         <div class="card-body">
             <div class="col-12 col-sm-12">
-              
+              <h6></h6>
               <div>Dados:</div>
             </div>
         </div>
       </div>
+      <?php } ?>
     
     </div>
 
