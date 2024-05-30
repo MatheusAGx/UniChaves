@@ -1,0 +1,31 @@
+<?php 
+    include "../config/header/header.php";
+    include "../config/sidemenu/sidemenu.php";
+
+?>
+    <div class="container-fluid">
+            
+            
+      <div class="card">
+        <div class="card-body">
+          <a href="./adicionar" class="btn btn-primary">Adicionar</a>
+        </div>
+      </div>
+
+    <?php while($chave = $busca_chave->fetch_object()) { ?>
+      <div class="card card-hover">
+        <div class="card-body">
+            <div class="col-12 col-sm-12"> 
+            <h6><?= $chave->nome ?></h6>
+              <div><small>Status: <?= $chave->id_status ?> | Instituição: <?= $chave->instituicao ?> | Usuário: <?= $chave->id_usuario ?> </small> </div>
+              <div><small>Descrição: <?= $chave->descricao ?> </small> </div>
+            </div>
+        </div>
+      </div>
+    <?php } ?>
+    </div>
+
+<?php 
+    include "../config/footer/footer.php"; 
+?>
+
