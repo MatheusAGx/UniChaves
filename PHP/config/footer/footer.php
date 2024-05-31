@@ -1,7 +1,7 @@
 </main>
 
-<footer style="display: flex; justify-content: center; align-items: center; background-color: #e9ecef; width:100%; height: 8vh; text-align: center;">
-    <p>Desenvolvido por Matheus Augusto Guedes e Gustavo Cleber Pardim.</p>
+<footer style="display: flex; justify-content: center; align-items: center; background-color: #e9ecef; width:100%; height: 4.3vh;">
+    <h6>Desenvolvido por Matheus Augusto Guedes e Gustavo Cleber Pardim.</h6>
 </footer>
 
 </body>

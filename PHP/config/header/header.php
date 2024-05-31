@@ -1,3 +1,9 @@
+<?php 
+if (!isset($_SESSION))
+  session_start();
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +27,13 @@
     display: none;
     font-size: 12px;
   }
+
+  footer {
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+  }
 </style>
 
 <body>
@@ -43,8 +56,8 @@
               </div>
               <div class="row">
                   <div class="col">
-                      <div>
-                          <p>Nome do Usuário</p>
+                      <div class="text-center">
+                          <h6><?php echo $_SESSION['nome']?></h6>
                       </div>
                   </div>
                   <!-- <div class="col-6">

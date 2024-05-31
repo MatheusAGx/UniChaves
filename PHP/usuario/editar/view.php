@@ -1,15 +1,25 @@
 <?php 
     include "../../config/header/header.php";
     include "../../config/sidemenu/sidemenu.php";
-
 ?>
 
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <p></p>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+<!-- ALERTAS -->
+
+<?php if ($sucesso): ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $msg ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>  
+<?php endif; ?>
+
+<?php if ($erro): ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?= $msg ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+
+<!-- CORPO DA PAGINA -->
 
 <div class="card">
     <div class="card-body">
@@ -29,7 +39,7 @@
                 <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome" aria-label="Nome" required value="<?= $usuario->nome ?>">
             </div>
             <div class="col-3">
-                <h6>Instituicao: </h6>
+                <h6>Tipo: </h6>
                 <select class="form-control" name="instituicao" id="instituicao">
                     <option value="<?= $usuario->id_instituicao?>" selected><?= $usuario->instituicao?></option>
                     <?php while($tipo = $busca_tipo->fetch_object()) { ?>
@@ -38,7 +48,7 @@
                 </select>
             </div>
             <div class="col-3">
-                <h6>Tipo: </h6>
+                <h6>Instituição: </h6>
                 <select class="form-control" name="tipo" id="tipo">
                     <option value="<?= $usuario->id_usuario_tipo?>" selected><?= $usuario->tipo?></option>
                     <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
