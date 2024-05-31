@@ -1,9 +1,27 @@
-<<<<<<< HEAD
 <?php 
     include "../../config/header/header.php";
     include "../../config/sidemenu/sidemenu.php";
 
 ?>
+
+<!-- ALERTAS -->
+
+<?php if ($sucesso): ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $msg ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>  
+<?php endif; ?>
+
+<?php if ($erro): ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?= $msg ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+
+<!-- CORPO DA PAGINA -->
+
 <div class="card">
     <div class="card-body">
         <a href="../" class="btn btn-primary">Voltar</a>
