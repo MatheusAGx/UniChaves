@@ -4,6 +4,8 @@ include "../../config/config.php";
 if(!isset($_SESSION)) {
     session_start();
 }
+$id = $_GET['id'];
+
 
 if (isset($_POST['cadastrar'])) {
 
@@ -12,15 +14,15 @@ if (isset($_POST['cadastrar'])) {
     $descricao = $conn->real_escape_string($_POST['descricao']);
     $id_usuario = $_SESSION['id'];
 
-    $q_insert_chave = "INSERT INTO cl203168.chave (nome, descricao, instituicao, id_status, id_usuario) VALUES ('$nome', '$descricao', '$instituicao', 1, '$id_usuario')";
+    $q_update_chave = "UPDATE chave SET nome = '$nome', descricao = '$descricao', instituicao = '$instituicao', id_status = 1, id_usuario = '$id_usuario' WHERE id = '$id'";
 
     if ($nome == '') {
         $erro = true;
         $msg = "O nome está vazio!";
     } else {
-        $insert = $conn->query($q_insert_chave);
+        $update = $conn->query($q_update_chave);
 
-        if ($insert) {
+        if ($update) {
             $sucesso = true;
             $msg = "Operação realizada com sucesso!";
         } else {
@@ -31,5 +33,10 @@ if (isset($_POST['cadastrar'])) {
     }
 }
 
-include "view.php";
+$q_busca_chave = "SELECT * FROM chave WHERE id = '$id'";
+$busca_chave = $conn->query($q_busca_chave);
 
+$q_busca_intituicao = "SELECT * FROM usuarios_instituicao";
+$busca_instituicao = $conn->query($q_busca_intituicao);
+
+include "view.php";

@@ -1,6 +1,5 @@
 <?php 
     include "../config/header/header.php";
-    include "../config/sidemenu/sidemenu.php";
 ?>
         <div class="container-fluid">
             <div class="card m-3">

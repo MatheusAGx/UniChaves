@@ -1,6 +1,5 @@
 <?php 
     include "../../config/header/header.php";
-    include "../../config/sidemenu/sidemenu.php";
 ?>
 
 <!-- ALERTAS -->
@@ -21,14 +20,14 @@
 
 <!-- CORPO DA PAGINA -->
 
-<div class="card">
+<div class="card my-2">
     <div class="card-body">
-        <a href="../" class="btn btn-primary">Voltar</a>
+        <a href="/php/usuario" class="btn btn-primary">Voltar</a>
     </div>
 </div>
 
 <?php while ($usuario = $busca_usuario->fetch_object()) { ?>
-<div class="card" style="width: full;">
+<div class="card my-2" style="width: full;">
   
     <div class="card-body">
         <h3 class="card-title">Cadastro de Usúário</h3>

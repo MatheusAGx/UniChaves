@@ -1,6 +1,5 @@
 <?php 
     include "../../config/header/header.php";
-    include "../../config/sidemenu/sidemenu.php";
 
 ?>
 
@@ -22,12 +21,12 @@
 
 <!-- CORPO DA PAGINA -->
 
-<div class="card">
+<div class="card my-2">
     <div class="card-body">
-        <a href="../" class="btn btn-primary">Voltar</a>
+        <a href="/php/chaves" class="btn btn-primary">Voltar</a>
     </div>
 </div>
-<div class="card" style="width: full;">
+<div class="card my-2" style="width: full;">
   
     <div class="card-body">
         <h3 class="card-title">Cadastro de Chaves</h3>
@@ -39,11 +38,11 @@
                 </div>
                 <div class="col-6">
                     <h6>Instituicao </h6>
-                    <select name="instituicao" id="instituicao" class="form-control">
-                        <option value="1">Unicamp - FT</option>
-                        <option value="2">Unicamp - FCA</option>
-                        <option value="3">Cotil</option>
-                        <option value="4">Portaria</option>
+                    <select name="instituicao" id="instituicao" class="form-select">
+                        <option value="0" selected></option>
+                        <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
+                        <option value="<?= $instituicao->id?> "> <?=$instituicao->descricao?> </option>
+                        <?php } ?>
                     </select>
                 </div>
             </div>
